@@ -8,7 +8,7 @@ const App = () => {
       App
 
       </div>
-      <p>welcome to { address}</p>
+      <p style={{color:'teal', fontSize:'20px'}}>welcome to { address}</p>
       <p>Hello</p>
       <ul>
         {names.map((name, index) => (
