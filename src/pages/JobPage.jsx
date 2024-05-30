@@ -26,11 +26,13 @@
 
 // export default JobPage;
 
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const JobPage = () => {
-  return loading ? <Spinner /> : <h1>{job.title}</h1>;
+  const { id } = useParams();
+  const job = useLoaderData();
+  return <h1>{job.title}</h1>;
 };
 
 const jobLoader = async ({ params }) => {
