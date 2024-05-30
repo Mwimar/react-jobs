@@ -27,7 +27,8 @@
 // export default JobPage;
 
 import { useParams, useLoaderData } from "react-router-dom";
-import Spinner from "../components/Spinner";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const JobPage = () => {
   const { id } = useParams();
@@ -36,12 +37,12 @@ const JobPage = () => {
     <>
       <section>
         <div className="container m-auto py-6 px-6">
-          <a
-            href="/jobs.html"
+          <Link
+            to="/jobs"
             className="text-indigo-500 hover:text-indigo-600 flex items-center"
           >
-            <i className="fas fa-arrow-left mr-2"></i> Back to Job Listings
-          </a>
+            <FaArrowLeft className="mr-2" /> Back to Job Listings
+          </Link>
         </div>
       </section>
 
