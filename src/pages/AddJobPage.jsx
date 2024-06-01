@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddJobPage = () => {
+const AddJobPage = ({ addJobSubmit }) => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [salary, setSalary] = useState("Under $50K");
   const [companyName, setCompanyName] = useState("");
-  const [companyDescription, setcompanyDescription] = useState("");
+  const [companyDescription, setCompanyDescription] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
+
+  const navigate = useNavigate();
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -26,8 +29,12 @@ const AddJobPage = () => {
         contactPhone,
       },
     };
-    console.log(newJob);
+
+    addJobSubmit(newJob);
+
+    return navigate("/jobs");
   };
+
   return (
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
@@ -169,7 +176,7 @@ const AddJobPage = () => {
                 rows="4"
                 placeholder="What does your company do?"
                 value={companyDescription}
-                onChange={(e) => setcompanyDescription(e.target.value)}
+                onChange={(e) => setCompanyDescription(e.target.value)}
               ></textarea>
             </div>
 
