@@ -13,8 +13,15 @@ import JobPage, { jobLoader } from "./pages/JobPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AddJobPage from "./pages/AddJobPage";
 
-const addJob = (newJob) => {
-  console.log(newJob);
+const addJob = async (newJob) => {
+  const res = await fetch("/api/jobs", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newJob),
+  });
+  return;
 };
 const router = createBrowserRouter(
   createRoutesFromElements(
