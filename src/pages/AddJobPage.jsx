@@ -2,10 +2,10 @@ import { useState } from "react";
 
 const AddJobPage = () => {
   const [title, setTitle] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState("Full-Time");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
-  const [salary, setSalary] = useState("");
+  const [salary, setSalary] = useState("Under $50K");
   const [companyName, setCompanyName] = useState("");
   const [companyDescription, setcompanyDescription] = useState("");
   const [contactEmail, setContactEmail] = useState("");
