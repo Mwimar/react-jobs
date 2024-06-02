@@ -36,7 +36,7 @@ const JobPage = ({ deleteJob }) => {
   const job = useLoaderData();
 
   const onDeleteClick = (jobId) => {
-    const confirm = widow.confirm(
+    const confirm = window.confirm(
       "Are you sure You want to delete this Listing?"
     );
     if (!confirm) {
