@@ -12,6 +12,7 @@ import JobsPage from "./pages/JobsPage";
 import JobPage, { jobLoader } from "./pages/JobPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AddJobPage from "./pages/AddJobPage";
+import EditJobPage from "./pages/EditJobPage";
 
 //Add New Job
 const addJob = async (newJob) => {
@@ -44,6 +45,12 @@ const router = createBrowserRouter(
         element={<JobPage deleteJob={deleteJob} />}
         loader={jobLoader}
       />
+      <Route
+        path="/edit-job/:id"
+        element={<EditJobPage />}
+        loader={jobLoader}
+      />
+      <Route path="/" element={<JobsPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
