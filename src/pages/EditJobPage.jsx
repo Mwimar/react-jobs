@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const EditJobPage = ({ updateJobSubmit }) => {
   const job = useLoaderData();
-  const navigate = useNavigate();
 
   const [title, setTitle] = useState(job.title);
   const [type, setType] = useState(job.title);
@@ -16,6 +15,9 @@ const EditJobPage = ({ updateJobSubmit }) => {
   );
   const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
   const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+
+  const navigate = useNavigate();
+  const { id } = useParams();
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -225,7 +227,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Job
+                Update Job
               </button>
             </div>
           </form>
